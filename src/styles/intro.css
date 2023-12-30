@@ -1,0 +1,30 @@
+/* Define the initial styles for the element */
+.el-11,
+.el-12,
+.el-13,
+.el-14,
+.el-15 {
+  /* Initial background color */
+  color: #000; /* Initial text color */
+
+  transition:
+    background-color 10s ease,
+    color 10s ease; /* Transition properties */
+}
+
+/* Define the keyframes for the animation */
+@keyframes changeColors {
+  to {
+    background-color: #000; /* New background color after animation */
+    color: #fff; /* New text color after animation */
+  }
+}
+
+/* Apply the keyframes animation after a fixed duration */
+.el-11.change-style,
+.el-12.change-style,
+.el-13.change-style,
+.el-14.change-style,
+.el-15.change-style {
+  animation: changeColors 2s forwards 5s; /* Animation duration and fill mode */
+}
