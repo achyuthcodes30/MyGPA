@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState, useRef, ReactElement } from "react";
+import React, { useEffect, useState } from "react";
 import "~/styles/intro.css";
 import Image from "next/image";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { spectral } from "./fonts";
 import Button from "./button";
 
@@ -44,7 +44,7 @@ export default function Intro({ welcome }: { welcome: string }) {
     setTimeout(() => setShowButton(true), 7000);
   }, []);
 
-  return window.innerWidth < 680 ? (
+  return typeof window !== "undefined" && window.innerWidth < 680 ? (
     <div className="min-h-full min-w-full overflow-hidden">
       <Image
         src="/introbg.jpg"
@@ -97,12 +97,12 @@ export default function Intro({ welcome }: { welcome: string }) {
     </div>
   ) : (
     <>
-      <Image
+      {/*<Image
         src="/introbgpc.jpg"
         objectFit="cover"
         fill={true}
         alt="MyGPA introbg"
-      />
+      /> 
       <motion.span
         variants={container}
         initial="hidden"
@@ -137,7 +137,8 @@ export default function Intro({ welcome }: { welcome: string }) {
               {char === " " ? "\u00A0" : char}
             </motion.span>
           ))}
-      </motion.span>
+            </motion.span> */}
+      <h1> Hello World</h1>
     </>
   );
 }
