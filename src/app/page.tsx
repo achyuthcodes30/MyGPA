@@ -2,6 +2,7 @@
 import Intro from "./intro";
 import { useState, useEffect } from "react";
 import IntroPC from "./intropc";
+import Loading from "./loading";
 export default function HomePage() {
   const [isSlim, setSlim] = useState(false);
   const updateMedia = () => {
@@ -18,10 +19,16 @@ export default function HomePage() {
   return (
     <>
       <main className="min-w-screen flex min-h-screen touch-none overflow-hidden">
-        {isSlim ? (
-          <Intro welcome="Welcome to MyGPA." />
+        {typeof window !== "undefined" ? (
+          isSlim ? (
+            <Intro welcome="Welcome to MyGPA." />
+          ) : (
+            <IntroPC welcome="Welcome to MyGPA." />
+          )
         ) : (
-          <IntroPC welcome="Welcome to MyGPA." />
+          <>
+            <Loading />
+          </>
         )}
       </main>
     </>
