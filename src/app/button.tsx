@@ -9,11 +9,11 @@ import { stagger, useAnimate } from "framer-motion";
 export default function Button() {
   const [cgpascope, cgpaanimate] = useAnimate();
   const [sgpascope, sgpaanimate] = useAnimate();
-  const cgpa = "Find my CGPA";
-  const sgpa = "Find my SGPA";
+  const cgpa: string = "Find my CGPA";
+  const sgpa: string = "Find my SGPA";
 
-  const onCgpaButtonClick = () => {
-    cgpaanimate([
+  const onCgpaButtonClick = async () => {
+    await cgpaanimate([
       [".cgpaletter", { y: -27 }, { duration: 0.4, delay: stagger(0.05) }],
       [".cgpa-button", { scale: 0.2 }, { duration: 0.1, at: "<" }],
       [".cgpa-button", { scale: 1 }, { duration: 0.05 }],
@@ -21,8 +21,8 @@ export default function Button() {
     ]);
   };
 
-  const onSgpaButtonClick = () => {
-    sgpaanimate([
+  const onSgpaButtonClick = async () => {
+    await sgpaanimate([
       [".sgpaletter", { y: -27 }, { duration: 0.4, delay: stagger(0.05) }],
       [".sgpa-button", { scale: 0.2 }, { duration: 0.1, at: "<" }],
       [".sgpa-button", { scale: 1 }, { duration: 0.05 }],
@@ -45,7 +45,7 @@ export default function Button() {
           onClick={onCgpaButtonClick}
         >
           <span className="relative flex items-center justify-center overflow-hidden bg-transparent">
-            {cgpa.split("").map((letter, index) => (
+            {cgpa.split("").map((letter: string, index: number) => (
               <span
                 data-letter={letter}
                 key={` ${letter + "-" + index}`}
@@ -65,7 +65,7 @@ export default function Button() {
           onClick={onSgpaButtonClick}
         >
           <span className="relative flex items-center justify-center overflow-hidden bg-transparent">
-            {sgpa.split("").map((letter, index) => (
+            {sgpa.split("").map((letter: string, index: number) => (
               <span
                 data-letter={letter}
                 key={` ${letter + "-" + index}`}
