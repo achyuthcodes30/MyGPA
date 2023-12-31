@@ -44,19 +44,20 @@ export default function Intro({ welcome }: { welcome: string }) {
     setTimeout(() => setShowButton(true), 7000);
   }, []);
 
-  return typeof window !== "undefined" && window.innerWidth < 680 ? (
-    <div className="min-h-full min-w-full overflow-hidden">
+  return (
+    <div className="min-h-full min-w-full touch-none overflow-hidden">
       <Image
         src="/introbg.jpg"
         objectFit="cover"
         fill={true}
         alt="MyGPA introbg"
+        loading="eager"
       />
       <motion.span
         variants={container}
         initial="hidden"
         animate="visible"
-        className="container mt-[9rem] flex items-center justify-center"
+        className="container mt-[7rem] flex items-center justify-center"
       >
         {welcome
           .split("")
@@ -83,7 +84,7 @@ export default function Intro({ welcome }: { welcome: string }) {
               variants={child}
               custom={index * 10 + 1}
               style={{
-                marginRight: `-0.17%`,
+                marginRight: `-0.2%`,
                 paddingLeft: "0.3%",
               }}
             >
@@ -91,54 +92,9 @@ export default function Intro({ welcome }: { welcome: string }) {
             </motion.span>
           ))}
       </motion.span>
-      <span className="relative mt-16 flex flex-wrap items-center justify-center">
+      <span className="relative mt-12 flex flex-wrap items-center justify-center">
         {showbutton && <Button />}
       </span>
     </div>
-  ) : (
-    <>
-      {/*<Image
-        src="/introbgpc.jpg"
-        objectFit="cover"
-        fill={true}
-        alt="MyGPA introbg"
-      /> 
-      <motion.span
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="container mb-60 ml-[40rem] flex items-center justify-center"
-      >
-        {welcome
-          .split("")
-          .slice(0, 10)
-          .map((char: string, index: number) => (
-            <motion.span
-              key={index}
-              className={`el-${index} change-style relative text-6xl`}
-              variants={child}
-              custom={index + 1}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        {welcome
-          .split("")
-          .slice(10, 17)
-          .map((char: string, index: number) => (
-            <motion.span
-              key={index}
-              className={`el-${
-                index + 10 // Indices start from 11 now
-              } change-style relative mr-[0.007%] text-6xl`} //slight margin to prevent overlapping when bg darkens.
-              variants={child}
-              custom={index * 10 + 1}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-            </motion.span> */}
-      <h1> Hello World</h1>
-    </>
   );
 }

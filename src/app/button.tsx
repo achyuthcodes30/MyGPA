@@ -16,7 +16,7 @@ export default function Button() {
     <>
       <span className="mx-2">
         <button
-          className={`cool-button relative flex h-12 w-40 items-center justify-center  border-2 border-sky-600 p-4 shadow-xl`}
+          className={`cool-button relative flex h-12 w-40 items-center justify-center  border-2 border-sky-600 p-4 shadow-2xl`}
           data-aos="fade-right"
           data-aos-duration="1400"
         >
@@ -27,7 +27,7 @@ export default function Button() {
       </span>
       <span className="mx-2">
         <button
-          className={`cool-button relative flex h-12 w-40 items-center justify-center  border-2 border-sky-600 p-4 shadow-xl`}
+          className={`cool-button  relative flex h-12 w-40 items-center justify-center border-2  border-sky-600 p-4 shadow-2xl`}
           data-aos="fade-left"
           data-aos-duration="1400"
         >
