@@ -18,7 +18,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      <main className="min-w-screen flex min-h-screen touch-none overflow-hidden">
+      <main className="min-w-screen min-h-screen touch-none overflow-hidden">
         {typeof window !== "undefined" ? (
           isSlim ? (
             <Intro welcome="Welcome to MyGPA." />
