@@ -9,8 +9,8 @@ import { stagger, useAnimate } from "framer-motion";
 export default function Button() {
   const [cgpascope, cgpaanimate] = useAnimate();
   const [sgpascope, sgpaanimate] = useAnimate();
-  const cgpa: string = "Find my CGPA";
-  const sgpa: string = "Find my SGPA";
+  const cgpa = "Find my CGPA";
+  const sgpa = "Find my SGPA";
 
   const onCgpaButtonClick = async () => {
     await cgpaanimate([
