@@ -40,7 +40,7 @@ export default function IntroPC({ welcome }: { welcome: string }) {
   };
 
   useEffect(() => {
-    setTimeout(() => setShowButton(true), 7000);
+    setTimeout(() => setShowButton(true), 6000);
   }, []);
   return (
     <div className="min-h-full min-w-full overflow-hidden">

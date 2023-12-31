@@ -26,5 +26,5 @@
 .el-13.change-style,
 .el-14.change-style,
 .el-15.change-style {
-  animation: changeColors 2s forwards 5s; /* Animation duration and fill mode */
+  animation: changeColors 2s forwards 4s; /* Animation duration and fill mode */
 }

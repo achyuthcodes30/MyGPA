@@ -41,7 +41,7 @@ export default function Intro({ welcome }: { welcome: string }) {
   };
 
   useEffect(() => {
-    setTimeout(() => setShowButton(true), 7000);
+    setTimeout(() => setShowButton(true), 6000);
   }, []);
 
   return (
