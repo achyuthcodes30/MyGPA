@@ -40,12 +40,19 @@ export default function Intro({ welcome }: { welcome: string }) {
     },
   };
 
+  const skipAnimation = () => {
+    setShowButton(true);
+  };
+
   useEffect(() => {
     setTimeout(() => setShowButton(true), 6000);
   }, []);
 
   return (
-    <div className="min-h-full min-w-full touch-pan-x overflow-hidden">
+    <div
+      className="min-h-full min-w-full touch-pan-x overflow-hidden"
+      onClick={skipAnimation}
+    >
       <Image
         src="/introbg.jpg"
         objectFit="cover"
@@ -55,7 +62,7 @@ export default function Intro({ welcome }: { welcome: string }) {
       />
       <motion.span
         variants={container}
-        initial="hidden"
+        initial={showbutton ? "visible" : "hidden"}
         animate="visible"
         className="container mt-[7rem] flex items-center justify-center"
       >

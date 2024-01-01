@@ -39,18 +39,22 @@ export default function IntroPC({ welcome }: { welcome: string }) {
     },
   };
 
+  const skipAnimation = () => {
+    setShowButton(true);
+  };
+
   useEffect(() => {
     setTimeout(() => setShowButton(true), 6000);
   }, []);
   return (
-    <div className="min-h-full min-w-full overflow-hidden">
-      <div className="image-div absolute mt-28 h-3/4 w-1/2">
-        <Image src={HatPic} alt="MyGPA introbg" loading="eager" />
-      </div>
-      <div className="relative ml-[45%] mt-[20%]">
+    <div
+      className="flex min-h-screen items-center justify-center overflow-hidden"
+      onClick={skipAnimation}
+    >
+      <div className="relative">
         <motion.span
           variants={container}
-          initial="hidden"
+          initial={showbutton ? "visible" : "hidden"}
           animate="visible"
           className="container flex items-center justify-center"
         >
