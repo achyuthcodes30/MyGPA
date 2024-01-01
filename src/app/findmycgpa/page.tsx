@@ -9,8 +9,8 @@ function FindMyCGPA() {
   };
 
   const renderListitems = () => {
-    let listItems = [];
-    for (let i: number = 0; i < 10; i++) {
+    const listItems = [];
+    for (let i = 0; i < 10; i++) {
       listItems.push(
         <li key={i} className="-z-{1} absolute -bottom-40 block text-sky-100">
           {randomGrade()}
