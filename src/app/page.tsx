@@ -3,7 +3,7 @@ import Intro from "./intro";
 import { useState, useEffect } from "react";
 import IntroPC from "./intropc";
 import Loading from "./loading";
-export default function HomePage() {
+function HomePage() {
   const [isSlim, setSlim] = useState(false);
   const updateMedia = () => {
     if (typeof window !== null && window.innerWidth < 1024) {
@@ -34,3 +34,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage;
