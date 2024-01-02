@@ -19,7 +19,7 @@ function FindMyCGPA() {
     return listItems;
   };
   return (
-    <main className="min-w-screen flex min-h-screen justify-center overflow-hidden">
+    <main className="flex h-screen w-screen touch-pan-x justify-center overflow-hidden">
       <div className="-z-{2} absolute h-full w-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-violet-600 via-indigo-800 to-gray-900">
         <ul className="grades -z-{1} absolute left-0 top-0 h-full w-full overflow-hidden ">
           {renderListitems()}

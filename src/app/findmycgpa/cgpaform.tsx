@@ -76,25 +76,26 @@ export default function CgpaForm() {
 
   return (
     <div
-      className="relative mt-16 lg:mt-12"
+      className="relative mt-16 flex h-full w-full justify-center lg:mt-12"
       style={{
         height: "90%",
         width: "95%",
         backgroundColor: "transparent",
-        marginLeft: "auto",
-        marginRight: "auto",
       }}
     >
-      <form onSubmit={handleSubmit(onCalc)} className="h-full w-full ">
+      <form
+        onSubmit={handleSubmit(onCalc)}
+        className="flex h-full w-full justify-center"
+      >
         <span className="flex w-full flex-wrap justify-between">
           <div ref={semesterTitles} className="mb-4">
             <span ref={semesterRef}>
               <h1
-                className={`text-2xl text-white underline lg:text-5xl ${poppins.className}`}
+                className={`text-2xl text-white lg:text-5xl ${poppins.className}`}
                 data-aos="fade-down"
                 data-aos-duration="1800"
               >
-                Semester
+                SEMESTER
               </h1>
             </span>
             <span ref={semesterRef}>
@@ -127,7 +128,7 @@ export default function CgpaForm() {
                 onClick={handleCalcClick}
               >
                 <button
-                  className={` text-sm font-semibold text-white lg:p-2 lg:text-lg`}
+                  className={` text-sm font-extrabold text-white ${lato.className} p-2 lg:text-lg`}
                   type="submit"
                 >
                   Calculate CGPA
@@ -138,11 +139,11 @@ export default function CgpaForm() {
           <div ref={creditsFields} className="mb-4 max-w-[30%]">
             <span className="flex justify-center" ref={semesterRef}>
               <h1
-                className={`text-2xl text-white underline lg:text-5xl ${poppins.className}`}
+                className={`text-2xl text-white lg:text-5xl ${poppins.className}`}
                 data-aos="fade-down"
                 data-aos-duration="1800"
               >
-                Credits
+                CREDITS
               </h1>
             </span>
             <span
@@ -196,7 +197,7 @@ export default function CgpaForm() {
               >
                 <button type="button" onClick={addSemester}>
                   <h1
-                    className={` text-center text-sm font-semibold text-white lg:flex lg:flex-row  lg:p-2 lg:text-lg`}
+                    className={` text-center text-sm font-extrabold text-white lg:flex lg:flex-row ${lato.className} p-2 lg:text-lg`}
                   >
                     <p>Add&nbsp;</p>
                     <p>semester</p>
@@ -208,7 +209,7 @@ export default function CgpaForm() {
           <div ref={sgpaFields} className="mb-4 max-w-[30%]">
             <span className="flex justify-center" ref={semesterRef}>
               <h1
-                className={`text-2xl text-white underline lg:text-5xl ${poppins.className}`}
+                className={`text-2xl text-white lg:text-5xl ${poppins.className}`}
                 data-aos="fade-down"
                 data-aos-duration="1800"
               >
@@ -266,7 +267,7 @@ export default function CgpaForm() {
               >
                 <button type="button" onClick={removeSemester}>
                   <h1
-                    className={` text-center text-sm font-semibold text-white  lg:p-2 lg:text-lg`}
+                    className={` p-2 text-center text-sm font-extrabold text-white ${lato.className} lg:text-lg`}
                   >
                     Remove semester
                   </h1>

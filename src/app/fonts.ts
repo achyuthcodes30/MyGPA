@@ -9,7 +9,7 @@ export const spectral = Spectral({
 export const lato = Lato({
   style: ["normal"],
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "700"],
 });
 
 export const poppins = Poppins({
