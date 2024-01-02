@@ -20,8 +20,8 @@ export default function CgpaForm() {
   const [addscope, addanimate] = useAnimate();
   const [rmscope, rmanimate] = useAnimate();
 
-  const handleCalcClick = () => {
-    calcanimate([
+  const handleCalcClick = async () => {
+    await calcanimate([
       [".calcbutton", { scale: 0.8 }, { duration: 0.1 }],
       [".calcbutton", { scale: 1 }, { duration: 0.1 }],
     ]);
@@ -45,23 +45,23 @@ export default function CgpaForm() {
     name: "semesters",
   });
 
-  const addSemester = () => {
+  const addSemester = async () => {
     if (fields.length < 8) {
       append({ credits: null, sgpa: null });
       setSemesterNumber(semesterNumber + 1);
     }
-    addanimate([
+    await addanimate([
       [".addbutton", { scale: 0.8 }, { duration: 0.1 }],
       [".addbutton", { scale: 1 }, { duration: 0.1 }],
     ]);
   };
 
-  const removeSemester = () => {
+  const removeSemester = async () => {
     if (fields.length > 1) {
       remove(fields.length - 1);
       setSemesterNumber(semesterNumber - 1);
     }
-    rmanimate([
+    await rmanimate([
       [".rmbutton", { scale: 0.8 }, { duration: 0.1 }],
       [".rmbutton", { scale: 1 }, { duration: 0.1 }],
     ]);
