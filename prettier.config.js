@@ -2,6 +2,7 @@
 const config = {
   plugins: ["prettier-plugin-tailwindcss"],
   arrowParens: "avoid",
+  semi: false,
 };
 
 export default config;
