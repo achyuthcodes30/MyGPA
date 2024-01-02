@@ -18,8 +18,8 @@ export default function Button() {
   const onCgpaButtonClick = async () => {
     await cgpaanimate([
       [".cgpaletter", { y: -27 }, { duration: 0.4, delay: stagger(0.05) }],
-      [".cgpa-button", { scale: 0.2 }, { duration: 0.1, at: "<" }],
-      [".cgpa-button", { scale: 1 }, { duration: 0.05 }],
+      [".cgpa-button", { scale: 0.8 }, { duration: 0.1, at: "<" }],
+      [".cgpa-button", { scale: 1 }, { duration: 0.1 }],
       [".cgpaletter", { y: 0 }, { duration: 0.0000001, at: 0.05 }],
     ]);
   };
@@ -28,7 +28,7 @@ export default function Button() {
     await sgpaanimate([
       [".sgpaletter", { y: -27 }, { duration: 0.4, delay: stagger(0.05) }],
       [".sgpa-button", { scale: 0.8 }, { duration: 0.1, at: "<" }],
-      [".sgpa-button", { scale: 1 }, { duration: 0.05 }],
+      [".sgpa-button", { scale: 1 }, { duration: 0.1 }],
       [".sgpaletter", { y: 0 }, { duration: 0.0000001, at: 0.05 }],
     ]);
   };
