@@ -22,8 +22,8 @@ export default function CgpaForm() {
 
   const handleCalcClick = async () => {
     await calcanimate([
-      [".calcbutton", { scale: 0.8 }, { duration: 0.1 }],
-      [".calcbutton", { scale: 1 }, { duration: 0.1 }],
+      [".calcbutton", { scale: 0.9 }, { duration: 0.2 }],
+      [".calcbutton", { scale: 1 }, { duration: 0.2 }],
     ]);
   };
 
@@ -45,15 +45,19 @@ export default function CgpaForm() {
     name: "semesters",
   });
 
+  const handleAdd = async () => {
+    await addanimate([
+      [".addbutton", { scale: 0.9 }, { duration: 0.2 }],
+      [".addbutton", { scale: 1 }, { duration: 0.2 }],
+    ]);
+  };
+
   const addSemester = async () => {
     if (fields.length < 8) {
       append({ credits: null, sgpa: null });
       setSemesterNumber(semesterNumber + 1);
+      await handleAdd();
     }
-    await addanimate([
-      [".addbutton", { scale: 0.8 }, { duration: 0.1 }],
-      [".addbutton", { scale: 1 }, { duration: 0.1 }],
-    ]);
   };
 
   const removeSemester = async () => {
@@ -62,8 +66,8 @@ export default function CgpaForm() {
       setSemesterNumber(semesterNumber - 1);
     }
     await rmanimate([
-      [".rmbutton", { scale: 0.8 }, { duration: 0.1 }],
-      [".rmbutton", { scale: 1 }, { duration: 0.1 }],
+      [".rmbutton", { scale: 0.9 }, { duration: 0.2 }],
+      [".rmbutton", { scale: 1 }, { duration: 0.2 }],
     ]);
   };
 
@@ -119,11 +123,13 @@ export default function CgpaForm() {
                 </h2>
               </React.Fragment>
             ))}
-            <div ref={calcscope}>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1400"
+              data-aos-delay="2400"
+              ref={calcscope}
+            >
               <div
-                data-aos="fade-right"
-                data-aos-duration="1400"
-                data-aos-delay="2400"
                 className="calcbutton flex w-[80%] justify-center rounded-full bg-gradient-to-br from-pink-600 to-purple-600 shadow-2xl lg:w-full"
                 onClick={handleCalcClick}
               >
@@ -188,14 +194,17 @@ export default function CgpaForm() {
                 />
               </span>
             ))}
-            <div ref={addscope}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1400"
+              data-aos-delay="2400"
+              ref={addscope}
+            >
               <div
-                data-aos="fade-up"
-                data-aos-duration="1400"
-                data-aos-delay="2400"
+                onClick={addSemester}
                 className="addbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-green-400 to-cyan-600 lg:mt-9"
               >
-                <button type="button" onClick={addSemester}>
+                <button type="button">
                   <h1
                     className={` text-center text-sm font-extrabold text-white lg:flex lg:flex-row ${lato.className} p-2 lg:text-lg`}
                   >
@@ -258,14 +267,17 @@ export default function CgpaForm() {
                 />
               </span>
             ))}
-            <div ref={rmscope}>
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1400"
+              data-aos-delay="2400"
+              ref={rmscope}
+            >
               <div
-                data-aos="fade-left"
-                data-aos-duration="1400"
-                data-aos-delay="2400"
+                onClick={removeSemester}
                 className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 via-rose-500 to-pink-600 lg:mt-9"
               >
-                <button type="button" onClick={removeSemester}>
+                <button type="button">
                   <h1
                     className={` p-2 text-center text-sm font-extrabold text-white ${lato.className} lg:text-lg`}
                   >

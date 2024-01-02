@@ -27,7 +27,7 @@ export default function Button() {
   const onSgpaButtonClick = async () => {
     await sgpaanimate([
       [".sgpaletter", { y: -27 }, { duration: 0.4, delay: stagger(0.05) }],
-      [".sgpa-button", { scale: 0.2 }, { duration: 0.1, at: "<" }],
+      [".sgpa-button", { scale: 0.8 }, { duration: 0.1, at: "<" }],
       [".sgpa-button", { scale: 1 }, { duration: 0.05 }],
       [".sgpaletter", { y: 0 }, { duration: 0.0000001, at: 0.05 }],
     ]);
@@ -55,12 +55,15 @@ export default function Button() {
   }, []);
   return (
     <>
-      <span ref={cgpascope} className="mx-2">
+      <span
+        data-aos="fade-right"
+        data-aos-duration="1400"
+        ref={cgpascope}
+        className="mx-2"
+      >
         <Link href="/findmycgpa" onClick={handlecgpalink}>
           <button
             className={`cgpa-button flex h-12 w-40 items-center justify-center border-2 border-sky-600 p-4 shadow-2xl`}
-            data-aos="fade-right"
-            data-aos-duration="1400"
             onClick={onCgpaButtonClick}
           >
             <span className="relative flex items-center justify-center overflow-hidden bg-transparent">
@@ -77,12 +80,15 @@ export default function Button() {
           </button>
         </Link>
       </span>
-      <span ref={sgpascope} className="mx-2">
+      <span
+        data-aos="fade-left"
+        data-aos-duration="1400"
+        ref={sgpascope}
+        className="mx-2"
+      >
         <Link href="/findmysgpa" onClick={handlesgpalink}>
           <button
             className={`sgpa-button flex h-12 w-40 items-center justify-center border-2 border-sky-600  p-4 shadow-2xl`}
-            data-aos="fade-left"
-            data-aos-duration="1400"
             onClick={onSgpaButtonClick}
           >
             <span className="relative flex items-center justify-center overflow-hidden bg-transparent">
