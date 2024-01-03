@@ -21,7 +21,7 @@ function Menu(props: MenuProps) {
   let linkertext = "";
 
   if (linkerinit && linkerinit.length > 0) {
-    for (let char of linkerinit) {
+    for (const char of linkerinit) {
       if (char) {
         linkertext += char.toLowerCase();
       }
