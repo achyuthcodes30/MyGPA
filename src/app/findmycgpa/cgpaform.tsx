@@ -33,7 +33,22 @@ export default function CgpaForm() {
     formState: { errors },
     control,
   } = useForm<Fields>();
-  const onCalc: SubmitHandler<Fields> = data => console.log(data);
+  const onCalc: SubmitHandler<Fields> = data => {
+    let totalcredits = 0;
+    let numerator = 0;
+    data.semesters.map(sem => {
+      if (sem.credits !== null) {
+        totalcredits += sem.credits * 1;
+      }
+    });
+    data.semesters.map(sem => {
+      if (sem.credits !== null && sem.sgpa !== null) {
+        numerator += sem.credits * sem.sgpa;
+      }
+    });
+
+    console.log((numerator / totalcredits).toFixed(2));
+  };
 
   const [semesterNumber, setSemesterNumber] = useState(1);
   const [semesterTitles] = useAutoAnimate<HTMLDivElement>();
@@ -80,7 +95,7 @@ export default function CgpaForm() {
 
   return (
     <div
-      className="relative mt-16 flex h-full w-full justify-center lg:mt-12"
+      className="relative mt-12 flex h-full w-full justify-center lg:mt-14"
       style={{
         height: "90%",
         width: "95%",
@@ -130,7 +145,7 @@ export default function CgpaForm() {
               ref={calcscope}
             >
               <div
-                className="calcbutton flex w-[80%] justify-center rounded-full bg-gradient-to-br from-pink-600 to-purple-600 shadow-2xl lg:w-full"
+                className="calcbutton flex w-[80%] justify-center rounded-full bg-gradient-to-br from-pink-400 to-purple-800 shadow-2xl lg:w-full"
                 onClick={handleCalcClick}
               >
                 <button
@@ -202,7 +217,7 @@ export default function CgpaForm() {
             >
               <div
                 onClick={addSemester}
-                className="addbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-green-400 to-cyan-600 lg:mt-9"
+                className="addbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-green-400 from-20% to-sky-800 lg:mt-9"
               >
                 <button type="button">
                   <h1
@@ -275,7 +290,7 @@ export default function CgpaForm() {
             >
               <div
                 onClick={removeSemester}
-                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 via-rose-500 to-pink-600 lg:mt-9"
+                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-rose-300 via-red-500 to-red-700  lg:mt-9"
               >
                 <button type="button">
                   <h1

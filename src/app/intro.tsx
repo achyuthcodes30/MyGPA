@@ -50,7 +50,7 @@ export default function Intro({ welcome }: { welcome: string }) {
 
   return (
     <div
-      className="min-h-full min-w-full touch-pan-x overflow-hidden"
+      className=" min-h-full min-w-full touch-pan-x overflow-hidden"
       onClick={skipAnimation}
     >
       <Image
