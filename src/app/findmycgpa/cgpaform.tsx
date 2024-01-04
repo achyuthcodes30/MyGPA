@@ -20,13 +20,6 @@ export default function CgpaForm() {
   const [addscope, addanimate] = useAnimate();
   const [rmscope, rmanimate] = useAnimate();
 
-  const handleCalcClick = async () => {
-    await calcanimate([
-      [".calcbutton", { scale: 0.9 }, { duration: 0.2 }],
-      [".calcbutton", { scale: 1 }, { duration: 0.2 }],
-    ]);
-  };
-
   const {
     register,
     handleSubmit,
@@ -54,25 +47,30 @@ export default function CgpaForm() {
   const [semesterTitles] = useAutoAnimate<HTMLDivElement>();
   const [creditsFields] = useAutoAnimate<HTMLDivElement>();
   const [sgpaFields] = useAutoAnimate<HTMLDivElement>();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: "semesters",
   });
 
-  const handleAdd = async () => {
-    await addanimate([
-      [".addbutton", { scale: 0.9 }, { duration: 0.2 }],
-      [".addbutton", { scale: 1 }, { duration: 0.2 }],
+  const handleCalcClick = async () => {
+    await calcanimate([
+      [".calcbutton", { scale: 0.9 }, { duration: 0.2 }],
+      [".calcbutton", { scale: 1 }, { duration: 0.2 }],
     ]);
+    setModalIsOpen(true);
   };
 
   const addSemester = async () => {
     if (fields.length < 8) {
       append({ credits: null, sgpa: null });
       setSemesterNumber(semesterNumber + 1);
-      await handleAdd();
     }
+    await addanimate([
+      [".addbutton", { scale: 0.9 }, { duration: 0.2 }],
+      [".addbutton", { scale: 1 }, { duration: 0.2 }],
+    ]);
   };
 
   const removeSemester = async () => {

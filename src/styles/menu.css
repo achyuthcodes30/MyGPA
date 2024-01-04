@@ -29,3 +29,15 @@ nav.visible li:last-child {
   transition: all 0.8s ease-in-out;
   box-shadow: 0 0px 50px rgba(4, 26, 62, 0.5);
 }
+
+@media screen and (min-width: 1200px) {
+  nav.visible li:first-child {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  nav.visible li:last-child {
+    width: 40vw;
+    height: 40vw;
+  }
+}

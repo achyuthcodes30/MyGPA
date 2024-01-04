@@ -62,7 +62,7 @@ function Menu(props: MenuProps) {
       </div>
 
       <span
-        className={`absolute left-[4.5vw] top-[4vh] z-[199] -rotate-[48deg] text-xl text-black lg:left-[6vw] lg:top-[15vh] lg:rotate-0 lg:text-4xl
+        className={`absolute left-[4.5vw] top-[4vh] z-[199] -rotate-[48deg] text-xl text-black lg:left-[2.5vw] lg:top-[9vh] lg:text-4xl
          ${spectral.className} ${
            rotation
              ? "opacity-100 transition-all delay-[200ms] duration-[1600ms]"
@@ -74,7 +74,7 @@ function Menu(props: MenuProps) {
       </span>
 
       <span
-        className={`absolute left-[8vw] top-[10vh] z-[199] -rotate-[48deg] text-xl text-black lg:left-[15vw] lg:top-[50vh] lg:rotate-0 lg:text-4xl
+        className={`absolute left-[8vw] top-[10vh] z-[199] -rotate-[48deg] text-xl text-black lg:left-[5vw] lg:top-[23vh] lg:text-4xl
          ${spectral.className} ${
            rotation
              ? " opacity-100 transition-all duration-[2000ms] "
