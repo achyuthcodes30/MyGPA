@@ -97,7 +97,8 @@ export default function SgpaForm() {
         );
         return true;
       }
-      titlesSet.add(title);
+      titlesSet.add(lowerCaseTitle);
+
       return false;
     });
 
