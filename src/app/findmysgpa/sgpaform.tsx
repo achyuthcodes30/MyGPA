@@ -66,13 +66,8 @@ export default function SgpaForm() {
       }
     });
     data.courses.forEach(course => {
-      if (
-        course.credits &&
-        course.grade &&
-        gradeObjects &&
-        gradeObjects[course.grade]
-      ) {
-        numerator += course.credits * (gradeObjects[course.grade] || 0);
+      if (course.credits && course.grade && gradeObjects?.[course.grade]) {
+        numerator += course.credits * (gradeObjects[course.grade] ?? 0);
       }
     });
 
@@ -345,10 +340,7 @@ export default function SgpaForm() {
                 className={`h-8 w-4/5 lg:h-10 lg:w-full ${spectral.className} relative rounded-xl text-center`}
               >
                 {Object.keys(gradeObjects).map(grade => (
-                  <option
-                    key={grade}
-                    value={grade as keyof typeof gradeObjects}
-                  >
+                  <option key={grade} value={grade}>
                     {grade}
                   </option>
                 ))}
@@ -366,10 +358,7 @@ export default function SgpaForm() {
                   className={`h-8 w-4/5 lg:h-10 lg:w-full ${spectral.className} relative rounded-xl text-center`}
                 >
                   {Object.keys(gradeObjects).map(grade => (
-                    <option
-                      key={grade}
-                      value={grade as keyof typeof gradeObjects}
-                    >
+                    <option key={grade} value={grade}>
                       {grade}
                     </option>
                   ))}
