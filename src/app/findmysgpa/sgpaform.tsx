@@ -30,7 +30,7 @@ export default function SgpaForm() {
     ]);
   };
 
-  const gradeObjects: { [key: string]: number } = {
+  const gradeObjects: Record<string, number> = {
     S: 10,
     A: 9,
     B: 8,
@@ -42,11 +42,9 @@ export default function SgpaForm() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitted, errors },
+    formState: { errors },
     control,
-    trigger,
     setError,
-    clearErrors,
   } = useForm<Fields>({
     defaultValues: {
       courses: [
@@ -74,7 +72,7 @@ export default function SgpaForm() {
         gradeObjects &&
         gradeObjects[course.grade]
       ) {
-        numerator += course.credits * gradeObjects[course.grade]!;
+        numerator += course.credits * (gradeObjects[course.grade] || 0);
       }
     });
 

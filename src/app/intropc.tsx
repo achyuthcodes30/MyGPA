@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "~/styles/intro.css";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { spectral } from "./fonts";
 import Button from "./button";
-import HatPic from "../../public/gradgat.jpg";
 
 export default function IntroPC({ welcome }: { welcome: string }) {
   const [showbutton, setShowButton] = useState(false);
