@@ -143,7 +143,7 @@ export default function CgpaForm() {
               ref={calcscope}
             >
               <div
-                className="calcbutton flex w-[80%] justify-center rounded-full bg-gradient-to-br from-pink-400 to-purple-800 shadow-2xl lg:w-full"
+                className="calcbutton flex w-[90%] justify-center rounded-full bg-gradient-to-br from-purple-800 to-pink-500 shadow-2xl lg:w-full"
                 onClick={handleCalcClick}
               >
                 <button
@@ -169,12 +169,6 @@ export default function CgpaForm() {
               className="relative mt-6 block flex w-full justify-center lg:mt-8"
               ref={semesterRef}
             >
-              <div
-                data-aos="flip-down"
-                data-aos-duration="2000"
-                data-aos-delay="1400"
-                className="-z-2 absolute h-full w-4/5 rounded-xl bg-gradient-to-br from-violet-400 to-rose-300 opacity-75 blur lg:w-full"
-              ></div>
               <input
                 data-aos="flip-down"
                 data-aos-duration="2000"
@@ -194,7 +188,6 @@ export default function CgpaForm() {
                 key={index + 1}
                 className="relative mt-4 block flex w-full justify-center lg:mt-8"
               >
-                <div className="-z-2 absolute h-full w-4/5 rounded-xl bg-gradient-to-br from-violet-400 to-rose-300 opacity-75 blur lg:w-full"></div>
                 <input
                   type="number"
                   placeholder="Total credits"
@@ -215,7 +208,7 @@ export default function CgpaForm() {
             >
               <div
                 onClick={addSemester}
-                className="addbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-green-400 from-20% to-sky-800 lg:mt-9"
+                className="addbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-cyan-600 from-20% to-green-400 lg:mt-9"
               >
                 <button type="button">
                   <h1
@@ -242,12 +235,6 @@ export default function CgpaForm() {
               ref={semesterRef}
               className="relative mt-6 block flex w-full justify-center lg:mt-8"
             >
-              <div
-                data-aos="flip-down"
-                data-aos-duration="2000"
-                data-aos-delay="1400"
-                className="-z-2 absolute h-full w-4/5 rounded-xl bg-gradient-to-br from-violet-400  to-rose-300 opacity-75 blur lg:w-full"
-              ></div>
               <input
                 data-aos="flip-down"
                 data-aos-duration="2000"
@@ -267,7 +254,6 @@ export default function CgpaForm() {
                 key={index + 1}
                 className="relative mt-4 block flex w-full justify-center lg:mt-8"
               >
-                <div className="-z-2 absolute h-full w-4/5 rounded-xl bg-gradient-to-br from-violet-400 to-rose-300 opacity-75 blur lg:w-full"></div>
                 <input
                   type="number"
                   placeholder="SGPA"
@@ -288,7 +274,7 @@ export default function CgpaForm() {
             >
               <div
                 onClick={removeSemester}
-                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-rose-300 via-red-500 to-red-700  lg:mt-9"
+                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 from-30% to-rose-400 lg:mt-9"
               >
                 <button type="button">
                   <h1
