@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAnimate } from "framer-motion";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import Modal from "./modal";
 
 type Fields = {
   courses: {
@@ -22,7 +23,8 @@ export default function SgpaForm() {
   const [calcscope, calcanimate] = useAnimate();
   const [addscope, addanimate] = useAnimate();
   const [rmscope, rmanimate] = useAnimate();
-
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [sgpa, setSgpa] = useState("");
   const handleCalcClick = async () => {
     await calcanimate([
       [".calcbutton", { scale: 0.9 }, { duration: 0.2 }],
@@ -56,6 +58,11 @@ export default function SgpaForm() {
       ],
     },
   });
+
+  const toggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
+
   const onCalc: SubmitHandler<Fields> = data => {
     let totalcredits = 0;
     let numerator = 0;
@@ -103,7 +110,10 @@ export default function SgpaForm() {
     });
 
     if (!hasDuplicates) {
+      toggleModal();
       console.log((numerator / totalcredits).toFixed(2));
+
+      setSgpa((numerator / totalcredits).toFixed(2));
       return;
     } else {
       return;
@@ -158,6 +168,12 @@ export default function SgpaForm() {
         backgroundColor: "transparent",
       }}
     >
+      <Modal
+        toggle={toggleModal}
+        isOpen={modalIsOpen}
+        gpaType="SGPA"
+        gpa={sgpa}
+      />
       <form
         onSubmit={handleSubmit(onCalc)}
         className="flex h-full w-full justify-center"
@@ -256,9 +272,7 @@ export default function SgpaForm() {
                 })}
                 className={`h-8 w-4/5 pl-2 lg:h-10 lg:w-full ${spectral.className} relative rounded-xl text-center`}
               >
-                <option selected value="1">
-                  1
-                </option>
+                <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -281,9 +295,7 @@ export default function SgpaForm() {
                   })}
                   className={`relative h-8 w-4/5 pl-2 lg:h-10 lg:w-full ${spectral.className} rounded-xl text-center`}
                 >
-                  <option selected value="1">
-                    1
-                  </option>
+                  <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>

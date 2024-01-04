@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useAnimate } from "framer-motion";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import Modal from "../findmysgpa/modal";
 
 type Fields = {
   semesters: {
@@ -26,29 +27,13 @@ export default function CgpaForm() {
     formState: { errors },
     control,
   } = useForm<Fields>();
-  const onCalc: SubmitHandler<Fields> = data => {
-    let totalcredits = 0;
-    let numerator = 0;
-    data.semesters.map(sem => {
-      if (sem.credits !== null) {
-        totalcredits += sem.credits * 1;
-      }
-    });
-    data.semesters.map(sem => {
-      if (sem.credits !== null && sem.sgpa !== null) {
-        numerator += sem.credits * sem.sgpa;
-      }
-    });
-
-    console.log((numerator / totalcredits).toFixed(2));
-  };
 
   const [semesterNumber, setSemesterNumber] = useState(1);
   const [semesterTitles] = useAutoAnimate<HTMLDivElement>();
   const [creditsFields] = useAutoAnimate<HTMLDivElement>();
   const [sgpaFields] = useAutoAnimate<HTMLDivElement>();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
+  const [cgpa, setCgpa] = useState("");
   const { fields, append, remove } = useFieldArray({
     control,
     name: "semesters",
@@ -59,7 +44,6 @@ export default function CgpaForm() {
       [".calcbutton", { scale: 0.9 }, { duration: 0.2 }],
       [".calcbutton", { scale: 1 }, { duration: 0.2 }],
     ]);
-    setModalIsOpen(true);
   };
 
   const addSemester = async () => {
@@ -84,6 +68,26 @@ export default function CgpaForm() {
     ]);
   };
 
+  const toggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
+  const onCalc: SubmitHandler<Fields> = data => {
+    let totalcredits = 0;
+    let numerator = 0;
+    data.semesters.map(sem => {
+      if (sem.credits !== null) {
+        totalcredits += sem.credits * 1;
+      }
+    });
+    data.semesters.map(sem => {
+      if (sem.credits !== null && sem.sgpa !== null) {
+        numerator += sem.credits * sem.sgpa;
+      }
+    });
+    toggleModal();
+    setCgpa((numerator / totalcredits).toFixed(2));
+  };
+
   useEffect(() => {
     AOS.init({
       easing: "ease",
@@ -100,6 +104,12 @@ export default function CgpaForm() {
         backgroundColor: "transparent",
       }}
     >
+      <Modal
+        toggle={toggleModal}
+        isOpen={modalIsOpen}
+        gpaType="CGPA"
+        gpa={cgpa}
+      />
       <form
         onSubmit={handleSubmit(onCalc)}
         className="flex h-full w-full justify-center"
