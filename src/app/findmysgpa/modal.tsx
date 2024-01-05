@@ -113,7 +113,7 @@ export default function Modal(props: ModalProps) {
               <GPAProgress gpa={gpa} openProgress={isOpen} />
 
               <span
-                className={`absolute mx-auto mt-[130%] flex w-3/4 flex-wrap justify-center  lg:invisible  
+                className={`absolute mx-auto mt-[100%] flex w-3/4 flex-wrap justify-center  lg:invisible  
               ${
                 isOpen
                   ? "ease opacity-100 transition-opacity delay-1000 duration-1000"
