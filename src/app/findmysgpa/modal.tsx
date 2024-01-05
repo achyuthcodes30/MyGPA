@@ -38,7 +38,9 @@ export default function Modal(props: ModalProps) {
     case floatgpa > 8:
       message = (
         <>
-          <p className={` text-lg text-white ${spectral.className}text-center`}>
+          <p
+            className={` text-lg text-white ${spectral.className} text-center`}
+          >
             Congratulations on achieving an impressive GPA! Your hard work has
             truly paid off. Well done!
           </p>
