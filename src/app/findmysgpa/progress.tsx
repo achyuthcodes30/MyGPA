@@ -20,8 +20,8 @@ export default function GPAProgress({
   const [showGPA, setShowGPA] = useState(false);
   useEffect(() => {
     const draw = () => {
-      let element = document.getElementById("robin");
-      let number = document.getElementById("robin1");
+      const element = document.getElementById("robin");
+      const number = document.getElementById("robin1");
       if (element && number) {
         element.style.strokeDasharray = `${Math.round(Math.PI * (2 * radius))}`;
         element.style.strokeDashoffset = `${
