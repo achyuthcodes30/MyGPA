@@ -182,7 +182,7 @@ export default function SgpaForm() {
           <div ref={courseTitles} className="mb-4 max-w-[30%] ">
             <span ref={courseRef}>
               <h1
-                className={`ml-3 text-2xl text-white lg:ml-6 lg:text-5xl ${poppins.className}`}
+                className={`ml-1 text-2xl text-white lg:ml-6 lg:text-5xl ${poppins.className}`}
                 data-aos="fade-down"
                 data-aos-duration="1800"
               >
