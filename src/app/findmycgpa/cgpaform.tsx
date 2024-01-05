@@ -190,7 +190,7 @@ export default function CgpaForm() {
                 {...register(`semesters.0.credits` as const, {
                   required: "Please enter semester credits",
                 })}
-                className={`h-8 w-4/5 pl-2 lg:h-10 lg:w-full ${spectral.className} relative rounded-xl text-center`}
+                className={`h-8 w-4/5 lg:h-10 lg:w-full ${spectral.className} relative rounded-xl text-center`}
               />
             </span>
             {fields.slice(1, semesterNumber).map((semester, index) => (
@@ -206,7 +206,7 @@ export default function CgpaForm() {
                   {...register(`semesters.${index + 1}.credits` as const, {
                     required: "Please enter semester credits",
                   })}
-                  className={`relative h-8 w-4/5 pl-2 lg:h-10 lg:w-full ${spectral.className} rounded-xl text-center`}
+                  className={`relative h-8 w-4/5 lg:h-10 lg:w-full ${spectral.className} rounded-xl text-center`}
                 />
               </span>
             ))}

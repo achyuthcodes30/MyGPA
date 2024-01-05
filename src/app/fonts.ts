@@ -1,4 +1,4 @@
-import { Spectral, Lato, Poppins } from "next/font/google";
+import { Spectral, Lato, Poppins, Changa_One } from "next/font/google";
 
 export const spectral = Spectral({
   style: ["normal"],
