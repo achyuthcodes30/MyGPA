@@ -186,7 +186,7 @@ export default function CgpaForm() {
                 type="number"
                 placeholder="Total credits"
                 min="0"
-                step="0.001"
+                step="1"
                 {...register(`semesters.0.credits` as const, {
                   required: "Please enter semester credits",
                 })}
@@ -202,7 +202,7 @@ export default function CgpaForm() {
                   type="number"
                   placeholder="Total credits"
                   min="0"
-                  step="0.001"
+                  step="1"
                   {...register(`semesters.${index + 1}.credits` as const, {
                     required: "Please enter semester credits",
                   })}
