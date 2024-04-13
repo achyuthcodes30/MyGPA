@@ -252,6 +252,7 @@ export default function CgpaForm() {
                 type="number"
                 placeholder="SGPA"
                 min="0"
+                max="10"
                 step="0.001"
                 {...register("semesters.0.sgpa" as const, {
                   required: "Please enter SGPA",
@@ -268,6 +269,7 @@ export default function CgpaForm() {
                   type="number"
                   placeholder="SGPA"
                   min="0"
+                  max="10"
                   step="0.001"
                   {...register(`semesters.${index + 1}.sgpa` as const, {
                     required: "Please enter SGPA",
