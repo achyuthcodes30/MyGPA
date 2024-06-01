@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata = {
   title: "MyGPA",
   description:
-    "A GPA calculator developed and maintained by Achyuth Yogesh Sosale",
+    "A GPA calculator for stydents of PES University",
 };
 
 export default function RootLayout({
@@ -20,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/icon.png" />
       <body className={`font-sans ${inter.variable}`}>{children}</body>
     </html>
   );

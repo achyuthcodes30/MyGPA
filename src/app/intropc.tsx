@@ -3,6 +3,7 @@ import "~/styles/intro.css";
 import { motion } from "framer-motion";
 import { spectral } from "./fonts";
 import Button from "./button";
+import Image from "next/image";
 
 export default function IntroPC({ welcome }: { welcome: string }) {
   const [showbutton, setShowButton] = useState(false);
@@ -49,6 +50,13 @@ export default function IntroPC({ welcome }: { welcome: string }) {
       className="flex min-h-screen items-center justify-center overflow-hidden"
       onClick={skipAnimation}
     >
+       <Image
+        src="/85327.jpg"
+        objectFit="cover"
+        fill={true}
+        alt="MyGPA introbg"
+        loading="eager"
+      />
       <div className="relative">
         <motion.span
           variants={container}
