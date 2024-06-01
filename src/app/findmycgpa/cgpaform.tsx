@@ -115,7 +115,7 @@ export default function CgpaForm() {
         className="flex h-full w-full justify-center"
       >
         <span className="flex w-full flex-wrap justify-between">
-          <div ref={semesterTitles} className="mb-4">
+          <div ref={semesterTitles} className="mb-4 ">
             <span ref={semesterRef}>
               <h1
                 className={`text-2xl text-white lg:text-5xl ${poppins.className}`}
@@ -127,7 +127,7 @@ export default function CgpaForm() {
             </span>
             <span ref={semesterRef}>
               <h2
-                className={`text-xl text-white lg:text-4xl ${spectral.className} mb-5 mt-7 lg:mb-9 lg:mt-9`}
+                className={`text-xl text-center text-white lg:text-4xl ${spectral.className} mb-5 mt-7 lg:mb-9 lg:mt-9`}
                 data-aos="fade-right"
                 data-aos-duration="1800"
                 data-aos-delay="1400"
@@ -139,7 +139,7 @@ export default function CgpaForm() {
             {fields.slice(1, semesterNumber).map((semester, index: number) => (
               <React.Fragment key={index}>
                 <h2
-                  className={`text-xl text-white lg:text-4xl ${spectral.className} mb-5 lg:mb-8`}
+                  className={`text-xl text-center text-white lg:text-4xl ${spectral.className} mb-5 lg:mb-8`}
                   key={index}
                 >
                   Semester {index + 2}
@@ -153,7 +153,7 @@ export default function CgpaForm() {
               ref={calcscope}
             >
               <div
-                className="calcbutton flex w-[90%] justify-center rounded-full bg-gradient-to-br from-purple-800 to-pink-500 shadow-2xl lg:w-full"
+                className="calcbutton flex justify-center rounded-full bg-gradient-to-br from-purple-800 to-pink-500 shadow-2xl w-[90%]"
                 onClick={handleCalcClick}
               >
                 <button
@@ -286,7 +286,7 @@ export default function CgpaForm() {
             >
               <div
                 onClick={removeSemester}
-                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 from-30% to-rose-400 lg:mt-9"
+                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 from-30% to-rose-500 lg:mt-9"
               >
                 <button type="button">
                   <h1

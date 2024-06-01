@@ -386,7 +386,7 @@ export default function SgpaForm() {
             >
               <div
                 onClick={removeCourse}
-                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 from-30% to-rose-400  lg:mt-9"
+                className="rmbutton mt-5 flex w-full justify-center rounded-full bg-gradient-to-br from-red-600 from-30% to-rose-500  lg:mt-9"
               >
                 <button type="button">
                   <h1
