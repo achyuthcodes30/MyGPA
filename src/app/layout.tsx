@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata = {
   title: "MyGPA",
   description:
-    "A GPA calculator for stydents of PES University",
+    "A GPA calculator for students of PES University",
 };
 
 export default function RootLayout({
